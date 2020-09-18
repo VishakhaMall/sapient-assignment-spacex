@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/reset.css">
+	<!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Resource style -->
+	<title>SpaceX Launch Programs</title>
+	<style>
+	</style>
+</head>
+
+<body onload="getData('https://api.spaceXdata.com/v3/launches?limit=100')">
+	<h3 id="heading">SpaceX Launch Programs</h3>
+	<main class="cd-main-content">
+		<div class="cd-filter filter-is-visible">
+			<form>
+				<h3>Filters</h3>
+				<input id="searchbar" onkeyup="search_year()" type="text" name="search" placeholder="Launch Year" />
+				<div id="myBtnContainer"> <a id="all" class="btn1 year active" onclick="filterSelection('all')">Show all</a>
+					<a id="2006" class="btn1 year" onclick="filterSelection(2006)">2006</a>
+					<a id="2007" class="btn1 year" onclick="filterSelection(2007)">2007</a>
+					<a id="2008" class="btn1 year" onclick="filterSelection(2008)">2008</a>
+					<a id="2009" class="btn1 year" onclick="filterSelection(2009)">2009</a>
+					<a id="2010" class="btn1 year" onclick="filterSelection(2010)">2010</a>
+					<a id="2011" class="btn1 year" onclick="filterSelection(2011)">2011</a>
+					<a id="2012" class="btn1 year" onclick="filterSelection(2012)">2012</a>
+					<a id="2013" class="btn1 year" onclick="filterSelection(2013)">2013</a>
+					<a id="2014" class="btn1 year" onclick="filterSelection(2014)">2014</a>
+					<a id="2015" class="btn1 year" onclick="filterSelection(2015)">2015</a>
+					<a id="2016" class="btn1 year" onclick="filterSelection(2016)">2016</a>
+					<a id="2017" class="btn1 year" onclick="filterSelection(2017)">2017</a>
+					<a id="2018" class="btn1 year" onclick="filterSelection(2018)">2018</a>
+					<a id="2019" class="btn1 year" onclick="filterSelection(2019)">2019</a>
+					<a id="2020" class="btn1 year" onclick="filterSelection(2020)">2020</a>
+				</div>
+				<input id="searchbarLaunch" onkeyup="search_launch_success()" type="text" name="search" placeholder="Launch Success" />
+				<div id="myBtnContainerSuccess">	<a id="allLaunch" class="btn2 launchSuccess activeLaunch" onclick="filterSelectionSuccess('all')">Show all</a>
+					<a class="btn2 launchSuccess" onclick="filterSelectionSuccess('true')">True</a>
+					<a class="btn2 launchSuccess" onclick="filterSelectionSuccess('false')">False</a>
+				</div>
+				<input id="searchbarLand" onkeyup="search_land_success()" type="text" name="search" placeholder="Land Success" />
+				<div id="myBtnContainerlandSuccess">	<a id="allLand" class="btn3 landSuccess activeLand" onclick="filterSelectionlandSuccess('allLand')">Show all</a>
+					<a class="btn3 landSuccess" onclick="filterSelectionlandSuccess('true')">True</a>
+					<a class="btn3 landSuccess" onclick="filterSelectionlandSuccess('false')">False</a>
+				</div>
+			</form>
+		</div>
+		<!-- cd-filter -->
+		<section class="cd-gallery filter-is-visible">
+			<ul id="spaceX-list"></ul>
+			<div id="msg-fail" style="display:none" class="cd-fail-message">No results found</div>
+		</section>
+		<!-- cd-gallery -->
+		
+		
+	</main>
+	<h3 style="text-align:center"><font style="font-weight:800">Developed By:</font> Vishakha Mall</h3>
+	<!-- cd-main-content -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery.mixitup.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
